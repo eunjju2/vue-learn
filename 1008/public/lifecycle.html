@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue LifeCycle</title>
+  </head>
+  <body>
+    <h2>Vue LifeCycle</h2>
+    <div id="result">
+      <!-- http://localhost:5173/lifecycle.html -->
+      {{message}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#result',
+        /*예제 1 {{message()}}*/
+        /*
+        data: {
+          message: function () {
+            return 'Ex 1 Hello Vue!!'
+          }
+        },
+        */
+        /*예제 2 {{message}}*/
+        /*
+        data() {
+          return {
+            message : 'Ex 2 Hello Vue!!',
+          }
+        }
+        */
+        /*예제 3 {{message}}*/
+        /*
+        data: () => {
+          return {
+            message: 'Ex 3 Hello Vue!!'
+          }
+        }
+        */
+       /*예제 4 {{message}}*/
+        data: function () {
+          return {
+            message: 'Ex 4 Hello Vue!!'
+          }
+        },
+        beforeCreate : function () {
+          console.log('beforeCreate');
+        },
+        created : function () {
+          console.log('created');
+        },
+        mounted : function () {
+          console.log('mounted');
+        },
+        updated : function () {
+          console.log('updated');
+        },
+      })
+    </script>
+  </body>
+</html>
